@@ -12,8 +12,8 @@ namespace MohawkGame2D
  
         public void Setup()
         {
-            Window.SetSize(600, 800);
-            Window.SetTitle("Claw Machine");
+            Window.SetSize(800, 600);
+            Window.SetTitle("Nasan Ka Na?");
         }
         public void Update()
         {
