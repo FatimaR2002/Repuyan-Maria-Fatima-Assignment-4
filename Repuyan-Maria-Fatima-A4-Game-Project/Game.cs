@@ -9,14 +9,16 @@ namespace MohawkGame2D
 {
     public class Game
     {
-        Color MainBody = new Color("F2D48D");
-        Color BG = new Color("AADCE1");
-        Color Border = new Color("F2C65F");
-        Color Screen = new Color("F5F4ED");
-        Color Detail = new Color("F6A93A");
+        public Color MainBody = new Color("F2D48D");
+        public Color BG = new Color("AADCE1");
+        public Color Border = new Color("F2C65F");
+        public Color Screen = new Color("F5F4ED");
+        public Color Detail = new Color("F6A93A");
+        public Color PlaceHolder1 = new Color("FFB6C1");
 
         //Objects
-        BorderFrame object1 = new BorderFrame(); 
+        BorderFrame object1 = new BorderFrame();
+        PlaceHolder object2 = new PlaceHolder();
         public void Setup()
         {
             Window.SetSize(800, 600);
@@ -77,8 +79,6 @@ namespace MohawkGame2D
             Draw.Capsule(new Vector2(210, 550), new Vector2(590, 550), 10);
             Draw.Capsule(new Vector2(210, 550), new Vector2(210, 600), 10);
             Draw.Capsule(new Vector2(590, 550), new Vector2(590, 600), 10);
-
-
 
             /////////
             /////
@@ -150,6 +150,7 @@ namespace MohawkGame2D
 
             //Classes Update for BorderFrame
             object1.Update();
+            object2.Update();
         }
 
     }
