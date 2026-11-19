@@ -15,17 +15,26 @@ namespace MohawkGame2D
         public Color Screen = new Color("F5F4ED");
         public Color Detail = new Color("F6A93A");
         public Color PlaceHolder1 = new Color("FFB6C1");
-
         //Objects
-        BorderFrame object1 = new BorderFrame();
-        PlaceHolder object2 = new PlaceHolder();
+        BorderFrame BorderFrame = new BorderFrame();
+        PlaceHolder PlaceHolder = new PlaceHolder();
+        Lives lives = new Lives();
+        PlaceHolder[] placeholder = new PlaceHolder[100];
         public void Setup()
         {
             Window.SetSize(800, 600);
             Window.SetTitle("Nasan Ka Na?");
+            placeholder = new PlaceHolder[100];
         }
         public void Update()
         {
+            //Functions 
+            Testing();
+
+            ////////
+            /////
+            ////////
+            
             Window.ClearBackground(BG);
 
             //Draw the Background for the Nintendo 3DS
@@ -148,11 +157,26 @@ namespace MohawkGame2D
             Draw.Circle(new Vector2(550, 100), 10);
             Draw.Circle(new Vector2(250, 100), 10);
 
-            //Classes Update for BorderFrame
-            object1.Update();
-            object2.Update();
-        }
+            ////////
+            ////
+            ///////
 
+            //Draw Border for Lives 
+            Draw.LineSize = 2f;
+            Draw.LineColor = Detail;
+            Draw.FillColor = Border;
+            Draw.Rectangle(new Vector2(60, 290), new Vector2(50, 150));
+            //Classes Update for BorderFrame
+            BorderFrame.Update();
+            PlaceHolder.Update();
+            lives.Update();
+
+
+        }
+        public void Testing()
+        {
+
+        }
     }
 
 }

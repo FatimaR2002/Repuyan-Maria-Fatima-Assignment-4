@@ -11,7 +11,10 @@ namespace MohawkGame2D
 {
     public class PlaceHolder
     {
-        Color Pink = new Color("F8C8DC");
+        public Color Pink = new Color("F8C8DC");
+        public Vector2 position;
+        public float radius;
+        public Vector2 velocity;
         public void Setup()
         {
         }
