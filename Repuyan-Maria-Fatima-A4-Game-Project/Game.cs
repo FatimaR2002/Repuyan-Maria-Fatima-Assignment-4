@@ -88,13 +88,6 @@ namespace MohawkGame2D
             Draw.LineSize = 0f;
             Draw.FillColor = Screen;
             Draw.Quad(new Vector2(150, 150), new Vector2(650, 150), new Vector2(650, 460), new Vector2(150, 460));
-            ////Main Screen Border Frame 
-            Draw.LineSize = 0f;
-            Draw.FillColor = Border;
-            Draw.Capsule(new Vector2(140, 140), new Vector2(660, 140), 10);
-            Draw.Capsule(new Vector2(140, 470), new Vector2(660, 470), 10);
-            Draw.Capsule(new Vector2(140, 470), new Vector2(140, 140), 10);
-            Draw.Capsule(new Vector2(660, 470), new Vector2(660, 140), 10);
 
             /////////
             /////
