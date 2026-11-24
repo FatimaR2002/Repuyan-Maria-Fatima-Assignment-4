@@ -250,6 +250,5 @@ namespace MohawkGame2D
         }
 
         #endregion
-
     }
 }

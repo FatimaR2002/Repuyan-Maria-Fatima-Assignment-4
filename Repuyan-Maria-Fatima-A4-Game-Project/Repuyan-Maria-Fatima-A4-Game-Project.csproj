@@ -18,4 +18,18 @@
   <ItemGroup>
     <PackageReference Include="Raylib-cs" Version="7.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MohawkGame2D\Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="MohawkGame2D\Assets\BGM.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Assets\BGM.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Assets\Cassiopeia.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

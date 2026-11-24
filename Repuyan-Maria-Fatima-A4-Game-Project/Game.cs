@@ -15,26 +15,37 @@ namespace MohawkGame2D
         public Color Screen = new Color("F5F4ED");
         public Color Detail = new Color("F6A93A");
         public Color PlaceHolder1 = new Color("FFB6C1");
-        //Objects
+        public Color filter = new Color(0, 255, 255, 10);
+        public Music BGM;
+        //Classes
         BorderFrame BorderFrame = new BorderFrame();
-        PlaceHolder PlaceHolder = new PlaceHolder();
         Lives lives = new Lives();
-        PlaceHolder[] placeholder = new PlaceHolder[100];
+        PlaceHolder[] placeholder = new PlaceHolder[10];
+        Chosen_Object_Icon Icon = new Chosen_Object_Icon();
+
+        //Classes for the Constellations 
+        Cassopeia cass = new Cassopeia();
         public void Setup()
         {
             Window.SetSize(800, 600);
             Window.SetTitle("Nasan Ka Na?");
-            placeholder = new PlaceHolder[100];
+            for (int i = 0; i < placeholder.Length; i++)
+            {
+                placeholder[i] = new PlaceHolder();
+                placeholder[i].Setup();
+                placeholder[i].position.Y = 100;
+                placeholder[i].position.X = i * 80;
+            }
+            BGM = Audio.LoadMusic("C:\\Users\\fatim\\source\\repos\\Repuyan-Maria-Fatima-Assignment-4\\Repuyan-Maria-Fatima-A4-Game-Project\\MohawkGame2D\\Assets/BGM.wav");
+
         }
         public void Update()
         {
-            //Functions 
-            Testing();
 
             ////////
             /////
             ////////
-            
+
             Window.ClearBackground(BG);
 
             //Draw the Background for the Nintendo 3DS
@@ -74,15 +85,12 @@ namespace MohawkGame2D
             Draw.LineSize = 0f;
             Draw.FillColor = MainBody;
             Draw.Rectangle(new Vector2(40, 520), new Vector2(720, 80));
-
             Draw.LineSize = 0f;
             Draw.FillColor = Border;
             Draw.Capsule(new Vector2(50, 510), new Vector2(750, 510), 20);
-
             Draw.LineSize = 0f;
             Draw.FillColor = Screen;
             Draw.Rectangle(new Vector2(200, 550), new Vector2(390, 80));
-
             Draw.LineSize = 0f;
             Draw.FillColor = Border;
             Draw.Capsule(new Vector2(210, 550), new Vector2(590, 550), 10);
@@ -113,7 +121,6 @@ namespace MohawkGame2D
                 Draw.Rectangle(new Vector2(30 + x, 320), new Vector2(10, 20));
                 Draw.Rectangle(new Vector2(30 + x, 350), new Vector2(10, 70));
             }
-
             // speakers 
             Draw.LineSize = 0f;
             Draw.FillColor = Detail;
@@ -127,7 +134,6 @@ namespace MohawkGame2D
             Draw.Circle(new Vector2(710, 240), 6);
             Draw.Circle(new Vector2(730, 240), 6);
             Draw.Circle(new Vector2(710, 260), 6);
-
             //Hinges & Circle Details
             Draw.LineSize = 3f;
             Draw.LineColor = Detail;
@@ -138,7 +144,6 @@ namespace MohawkGame2D
             Draw.LineSize = 0f;
             Draw.FillColor = Border;
             Draw.Circle(new Vector2(740, 510), 8);
-
             Draw.LineSize = 0f;
             Draw.FillColor = Detail;
             Draw.Circle(new Vector2(400, 100), 20);
@@ -149,7 +154,6 @@ namespace MohawkGame2D
             Draw.Circle(new Vector2(430, 100), 10);
             Draw.FillColor = MainBody;
             Draw.Circle(new Vector2(430, 100), 6);
-
             Draw.FillColor = Detail;
             Draw.Circle(new Vector2(550, 100), 15);
             Draw.Circle(new Vector2(250, 100), 15);
@@ -166,16 +170,35 @@ namespace MohawkGame2D
             Draw.LineColor = Detail;
             Draw.FillColor = Border;
             Draw.Rectangle(new Vector2(60, 290), new Vector2(50, 150));
-            //Classes Update for BorderFrame
+
+            ////////
+            ////
+            ///////
+
+            //Classes Update for BorderFrame, lives and icon
             BorderFrame.Update();
-            PlaceHolder.Update();
             lives.Update();
+            Icon.Update();
 
+            //Functions 
+            Testing();
 
+            //Classes Update for the different Constellations 
+            cass.Update();
+
+            //Start Playing Music if it is not playing 
+            if (Audio.IsPlaying(BGM) == false)
+            {
+                Audio.Play(BGM);
+            }
+            
         }
         public void Testing()
         {
-
+            for (int i = 0; i < placeholder.Length; i++)
+            {
+                placeholder[i].Update();
+            }
         }
     }
 

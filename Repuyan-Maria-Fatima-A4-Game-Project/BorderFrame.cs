@@ -8,14 +8,19 @@ namespace MohawkGame2D
 {
     public class BorderFrame
     {
-        Color Border = new Color("F2C65F");
-
+        public Color Border = new Color("F2C65F");
         public void Setup()
         {
 
         }
 
         public void Update()
+        {
+            //Functions
+            Render();
+
+        }
+        public void Render()
         {
             ////Main Screen Border Frame 
             Draw.LineSize = 0f;
@@ -24,7 +29,6 @@ namespace MohawkGame2D
             Draw.Capsule(new Vector2(140, 470), new Vector2(660, 470), 10);
             Draw.Capsule(new Vector2(140, 470), new Vector2(140, 140), 10);
             Draw.Capsule(new Vector2(660, 470), new Vector2(660, 140), 10);
-
         }
     }
 }

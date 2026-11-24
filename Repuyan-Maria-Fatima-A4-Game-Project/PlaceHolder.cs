@@ -15,16 +15,32 @@ namespace MohawkGame2D
         public Vector2 position;
         public float radius;
         public Vector2 velocity;
+        public Vector2 size;
         public void Setup()
         {
+            velocity = Random.Direction() * 100;
         }
 
         public void Update()
         {
+            position += velocity * Time.DeltaTime;
+            ///////
+            ////
+            ///////
+
+            ////////
+            ////
+            ///////
+
+            //Functions 
+            Render();
+        }
+        public void Render()
+        {
             Draw.LineSize = 0f;
             Draw.FillColor = Pink;
-            Draw.Circle(new Vector2(400, 400), 30);
-
-        }
+            Draw.Circle(position, 30);
+        }           
     }
 }
+
