@@ -25,7 +25,6 @@ namespace MohawkGame2D
 
             //Functions
             Render();
-
         }
         public void Render()
         {

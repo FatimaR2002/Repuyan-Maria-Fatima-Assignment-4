@@ -52,11 +52,6 @@ namespace MohawkGame2D
         }
         public void Update()
         {
-
-            ////////
-            /////
-            ////////
-
             Window.ClearBackground(BG);
 
             //Draw the Background for the Nintendo 3DS
@@ -73,6 +68,7 @@ namespace MohawkGame2D
                 int x = i * 720;
                 Draw.Circle(new Vector2(40 + x, 480), 10);
             }
+
             //Side Corners 
             for (int i = 0; i < 2; i++)
             {
@@ -80,6 +76,7 @@ namespace MohawkGame2D
                 int x = i * 710;
                 Draw.Rectangle(new Vector2(30 + x, 90), new Vector2(30, 390));
             }
+
             ////Top Corners 
             for (int i = 0; i < 2; i++)
             {
@@ -108,18 +105,10 @@ namespace MohawkGame2D
             Draw.Capsule(new Vector2(210, 550), new Vector2(210, 600), 10);
             Draw.Capsule(new Vector2(590, 550), new Vector2(590, 600), 10);
 
-            /////////
-            /////
-            /////////
-
             ////Main Screen
             Draw.LineSize = 0f;
             Draw.FillColor = Screen;
             Draw.Quad(new Vector2(150, 150), new Vector2(650, 150), new Vector2(650, 460), new Vector2(150, 460));
-
-            /////////
-            /////
-            /////////
 
             //Details();
             //Draw the indents of the 3DS
@@ -132,6 +121,7 @@ namespace MohawkGame2D
                 Draw.Rectangle(new Vector2(30 + x, 320), new Vector2(10, 20));
                 Draw.Rectangle(new Vector2(30 + x, 350), new Vector2(10, 70));
             }
+
             // speakers 
             Draw.LineSize = 0f;
             Draw.FillColor = Detail;
@@ -145,6 +135,7 @@ namespace MohawkGame2D
             Draw.Circle(new Vector2(710, 240), 6);
             Draw.Circle(new Vector2(730, 240), 6);
             Draw.Circle(new Vector2(710, 260), 6);
+
             //Hinges & Circle Details
             Draw.LineSize = 3f;
             Draw.LineColor = Detail;
@@ -172,19 +163,11 @@ namespace MohawkGame2D
             Draw.Circle(new Vector2(550, 100), 10);
             Draw.Circle(new Vector2(250, 100), 10);
 
-            ////////
-            ////
-            ///////
-
             //Draw Border for Lives 
             Draw.LineSize = 2f;
             Draw.LineColor = Detail;
             Draw.FillColor = Border;
             Draw.Rectangle(new Vector2(60, 290), new Vector2(50, 150));
-
-            ////////
-            ////
-            ///////
 
             //Classes Update for BorderFrame, lives and icon
             BorderFrame.Update();
@@ -192,7 +175,7 @@ namespace MohawkGame2D
             SunO.Update();
 
             //Functions 
-            Testing();
+            Arrays();
 
             //Put the update for the PinkCircleButton    
 
@@ -204,7 +187,7 @@ namespace MohawkGame2D
 
         }
 
-        public void Testing()
+        public void Arrays()
         {
             for (int i = 0; i < placeholder.Length; i++)
             {
