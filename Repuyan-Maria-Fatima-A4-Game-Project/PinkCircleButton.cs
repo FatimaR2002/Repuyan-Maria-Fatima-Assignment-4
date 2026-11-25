@@ -16,7 +16,7 @@ namespace Repuyan_Maria_Fatima_A4_Game_Project
         {
             //velocity = Random.Direction() * 100;
 
-            CircleP = Graphics.LoadTexture("C:\\Users\\fatim\\source\\repos\\Repuyan-Maria-Fatima-Assignment-4\\Repuyan-Maria-Fatima-A4-Game-Project\\MohawkGame2D\\Assets/P_Circle.png");
+            CircleP = Graphics.LoadTexture("Assets/Graphics/P_Circle.png");
         }
         public void Update()
         {

@@ -31,5 +31,6 @@ namespace MohawkGame2D
             Graphics.Scale = 10f;
             Graphics.Draw(SunO, position);
         }
+
     }
 }

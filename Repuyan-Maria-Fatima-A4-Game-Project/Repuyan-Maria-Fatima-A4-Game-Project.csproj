@@ -54,6 +54,9 @@
     <None Update="Assets\Flower_Purple_Button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Seamstress.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Square_Blue_Button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -18,6 +18,7 @@ namespace MohawkGame2D
         public Color PlaceHolder1 = new Color("FFB6C1");
         public Color filter = new Color(0, 255, 255, 10);
         public Music BGM;
+        public string TitleScreen = "Nasan Ka Na Ba?";
         //Classes
         BorderFrame BorderFrame = new BorderFrame();
         Lives lives = new Lives();
@@ -27,10 +28,12 @@ namespace MohawkGame2D
         //Classes for the Buttons 
         PinkCircleButton[] CircleP = new PinkCircleButton[10];
 
+        //Font 
+        Font Seamstress = Text.LoadFont("Assests/Fonts/Seamstress.otf");
         public void Setup()
         {
             Window.SetSize(800, 600);
-            Window.SetTitle("Nasan Ka Na?");
+            Window.SetTitle("Nasan Ka Na Ba?");
 
             //Tracking the placeholder
             for (int i = 0; i < placeholder.Length; i++)
@@ -176,6 +179,8 @@ namespace MohawkGame2D
 
             //Functions 
             Arrays();
+            Title();
+
 
             //Put the update for the PinkCircleButton    
 
@@ -202,6 +207,17 @@ namespace MohawkGame2D
         public void DepleteLives()
         {
             //If player touches Orange_Sun, Delete one life 
+
+        }
+        public void Title()
+        {
+            Text.Font = Seamstress;
+
+            //Position of Title Screen
+            Vector2 position = new Vector2(200, 80);
+
+            Text.Size = 50;
+            Text.Draw(TitleScreen, position);
 
         }
     }
