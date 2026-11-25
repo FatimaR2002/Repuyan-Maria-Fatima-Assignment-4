@@ -18,7 +18,7 @@ namespace MohawkGame2D
         public Vector2 size;
         public void Setup()
         {
-            velocity = Random.Direction() * 100;
+            velocity = Random.Direction() * 300;
         }
 
         public void Update()

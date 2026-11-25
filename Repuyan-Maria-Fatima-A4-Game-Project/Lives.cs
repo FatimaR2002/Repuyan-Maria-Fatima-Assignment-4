@@ -23,6 +23,7 @@ namespace MohawkGame2D
                 int y = i * 50;
                 Draw.Rectangle(new Vector2(70, 300 + y), new Vector2(30, 30));
             }
+
         }
     }
 }

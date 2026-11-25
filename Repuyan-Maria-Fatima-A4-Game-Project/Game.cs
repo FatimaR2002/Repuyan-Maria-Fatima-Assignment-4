@@ -1,4 +1,5 @@
 ﻿// Include the namespaces (code libraries) you need below.
+using Repuyan_Maria_Fatima_A4_Game_Project;
 using System;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
@@ -21,14 +22,17 @@ namespace MohawkGame2D
         BorderFrame BorderFrame = new BorderFrame();
         Lives lives = new Lives();
         PlaceHolder[] placeholder = new PlaceHolder[10];
-        Chosen_Object_Icon Icon = new Chosen_Object_Icon();
+        Orange_Sun SunO = new Orange_Sun();
 
-        //Classes for the Constellations 
-        Cassopeia cass = new Cassopeia();
+        //Classes for the Buttons 
+        PinkCircleButton[] CircleP = new PinkCircleButton[10];
+
         public void Setup()
         {
             Window.SetSize(800, 600);
             Window.SetTitle("Nasan Ka Na?");
+
+            //Tracking the placeholder
             for (int i = 0; i < placeholder.Length; i++)
             {
                 placeholder[i] = new PlaceHolder();
@@ -36,8 +40,15 @@ namespace MohawkGame2D
                 placeholder[i].position.Y = 100;
                 placeholder[i].position.X = i * 80;
             }
-            BGM = Audio.LoadMusic("C:\\Users\\fatim\\source\\repos\\Repuyan-Maria-Fatima-Assignment-4\\Repuyan-Maria-Fatima-A4-Game-Project\\MohawkGame2D\\Assets/BGM.wav");
+            BGM = Audio.LoadMusic("Assets/Dressmaker_BGM.wav");
 
+            //Tracking the Pink Circle
+            CircleP = new PinkCircleButton[10];
+            for (int i = 0; i < CircleP.Length; i++)
+            {
+                CircleP[i] = new PinkCircleButton();
+                CircleP[i].Setup();
+            }
         }
         public void Update()
         {
@@ -178,27 +189,37 @@ namespace MohawkGame2D
             //Classes Update for BorderFrame, lives and icon
             BorderFrame.Update();
             lives.Update();
-            Icon.Update();
+            SunO.Update();
 
             //Functions 
             Testing();
 
-            //Classes Update for the different Constellations 
-            cass.Update();
+            //Put the update for the PinkCircleButton    
 
             //Start Playing Music if it is not playing 
             if (Audio.IsPlaying(BGM) == false)
             {
                 Audio.Play(BGM);
             }
-            
+
         }
+
         public void Testing()
         {
             for (int i = 0; i < placeholder.Length; i++)
             {
                 placeholder[i].Update();
             }
+            for (int i = 0; i < CircleP.Length; i++)
+            {
+                CircleP[i].Update();
+            }
+        }
+        
+        public void DepleteLives()
+        {
+            //If player touches Orange_Sun, Delete one life 
+
         }
     }
 
