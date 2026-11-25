@@ -39,7 +39,7 @@ namespace MohawkGame2D
         {
             Draw.LineSize = 0f;
             Draw.FillColor = Pink;
-            Draw.Circle(position, 30);
+            Draw.Rectangle(position, new Vector2(50,50));
         }           
     }
 }
